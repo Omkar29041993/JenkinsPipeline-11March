@@ -1,3 +1,11 @@
 node {
-    echo "Hello Omkar"
+    stage ('Build'){
+	echo "Build Stage"
+    }
+    stage ('Testing'){
+	echo "Testing stage"	
+    }
+    stage ('Deployment'){
+        echo "Deployment stage"
+    }
 }
