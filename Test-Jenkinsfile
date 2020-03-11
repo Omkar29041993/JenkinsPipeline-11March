@@ -3,7 +3,7 @@ node {
 	echo "Build Stage"
     }
     stage ('Testing'){
-	echo "Testing stage"	
+	sh 'kdir' 
     }
     stage ('Deployment'){
         echo "Deployment stage"
