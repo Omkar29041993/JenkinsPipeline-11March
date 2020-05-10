@@ -1,13 +1,4 @@
 node {
-    stage ('Build'){
-	echo "Build Stage"
-    }
-    stage ('Testing'){
-	sh 'kdir' 
-    }
-    stage ('Deployment'){
-        echo "Deployment stage"
-    }
     stage('Git Checkout'){
 	echo "Git Checkout"
         FULL_PATH_BRANCH = "${sh(script:'git name-rev --name-only HEAD', returnStdout: true)}"
