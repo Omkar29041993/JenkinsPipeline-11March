@@ -9,4 +9,5 @@ node {
     stage('Git Checkout'){
 	def branchName = getCurrentBranch()
     echo 'My branch is' + branchName
+	}
 }
