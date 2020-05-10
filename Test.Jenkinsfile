@@ -5,4 +5,7 @@ node {
 	// env.GIT_BRANCH = git_branch
 	// echo "GIT_BRANCH=$GIT_BRANCH"
 	sh 'echo Branch Name: $BRANCH_NAME'
+	sh 'git rev-parse HEAD > commit'
+	def commit = readFile('commit').trim()
+	echo "commit=$commit"
 }
