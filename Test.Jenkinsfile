@@ -12,5 +12,5 @@ node {
 	env.GIT_BRANCH_PATH=sh(returnStdout: true, script: "git name-rev --name-only HEAD").trim()
     env.GIT_BRANCH_NAME=GIT_BRANCH_PATH.split('remotes/origin/')
     sh 'echo Branch Path: $GIT_BRANCH_PATH'
-    sh 'echo Branch Name: $GIT_BRANCH'
+    sh 'echo Branch Name: $GIT_BRANCH_NAME'
 }
