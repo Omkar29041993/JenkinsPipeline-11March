@@ -1,13 +1,7 @@
-def getCurrentBranch () {
-    return sh (
-        script: 'git rev-parse --abbrev-ref HEAD',
-        returnStdout: true
-    ).trim()
-}
-
 node {
-    stage('Git Checkout'){
-	def branchName = getCurrentBranch()
-    echo 'My branch is' + branchName
-	}
+    sh 'git name-rev --name-only HEAD > GIT_BRANCH'
+	sh 'cat GIT_BRANCH'
+	git_branch = readFile('GIT_BRANCH').trim()
+	env.GIT_BRANCH = git_branch
+	echo "GIT_BRANCH=$GIT_BRANCH"
 }
